@@ -4,7 +4,6 @@ D:\progs\VisualStudioSolutions\WordsCounterTestTask\bin\Debug\netcoreapp3.1\Word
 D:\progs\VisualStudioSolutions\WordsCounterTestTask\bin\Debug\netcoreapp3.1\WordsCounterTestTask.runtimeconfig.dev.json
 D:\progs\VisualStudioSolutions\WordsCounterTestTask\bin\Debug\netcoreapp3.1\WordsCounterTestTask.dll
 D:\progs\VisualStudioSolutions\WordsCounterTestTask\bin\Debug\netcoreapp3.1\WordsCounterTestTask.pdb
-D:\progs\VisualStudioSolutions\WordsCounterTestTask\obj\Debug\netcoreapp3.1\WordsCounterTestTask.csprojAssemblyReference.cache
 D:\progs\VisualStudioSolutions\WordsCounterTestTask\obj\Debug\netcoreapp3.1\WordsCounterTestTask.AssemblyInfoInputs.cache
 D:\progs\VisualStudioSolutions\WordsCounterTestTask\obj\Debug\netcoreapp3.1\WordsCounterTestTask.AssemblyInfo.cs
 D:\progs\VisualStudioSolutions\WordsCounterTestTask\obj\Debug\netcoreapp3.1\WordsCounterTestTask.dll
