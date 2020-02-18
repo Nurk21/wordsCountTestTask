@@ -1,33 +1,30 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using WordsCounterTestTask.Interfaces;
+using WordsCounterTestTask.Entities;
+using WordsCounterTestTask.Services;
 
 namespace WordsCounterTestTask
 {
     class Program
     {
-        public static async Task Main(string[] args)
+        public static void Main(string[] args)
         {
-            string path = "";
-            int result = 0;
-            List<string> lines = new List<string>();
-            Regex regex = new Regex(pattern: @"\b[aeiouy]+\b", options: RegexOptions.Compiled | RegexOptions.IgnoreCase);            
+            var file = new DataFile();
+            IFileService _fileService = new FileService();
+            Regex regex = new Regex(pattern: @"\b[aeiouy]+\b", options: RegexOptions.Compiled | RegexOptions.IgnoreCase);
 
             Console.WriteLine("Type the path to the text file in the following format: C:\\*.txt");
 
             do
             {
-                path = Console.ReadLine();
-                lines = await new File(path).FileProcessing();
+                file.Path = Console.ReadLine();
+                file.Lines = _fileService.LoadDataAsync(file.Path).Result;
             }
-            while (lines.Count == 0);
+            while (file.Lines.Count == 0);
 
-            result = new FileService(lines, regex).processing();
+            var result = _fileService.Processing(file.Lines, regex);
 
-            Console.WriteLine($"An input file has {result} words with wovels characters only") ;
+            Console.WriteLine($"An input file has {result} words with wovels characters only");
             Console.ReadKey();
         }
     }
