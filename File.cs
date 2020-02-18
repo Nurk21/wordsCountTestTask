@@ -10,6 +10,7 @@ namespace WordsCounterTestTask
    public class File : IFile
     {
         private readonly string _path;
+        
         public File(string path)
         {
             this._path = path;

@@ -9,28 +9,21 @@ namespace WordsCounterTestTask
 {
     class Program
     {
-        public static void Main(string[] args)
+        public static async Task Main(string[] args)
         {
             string path = "";
             int result = 0;
             List<string> lines = new List<string>();
-            Regex regex = new Regex(pattern: @"\b[aeiouy]+\b", options: RegexOptions.Compiled | RegexOptions.IgnoreCase);
+            Regex regex = new Regex(pattern: @"\b[aeiouy]+\b", options: RegexOptions.Compiled | RegexOptions.IgnoreCase);            
 
             Console.WriteLine("Type the path to the text file in the following format: C:\\*.txt");
-            async void _FileProcessing(string path)
+
+            do
             {
-                //file = new File(path);
+                path = Console.ReadLine();
                 lines = await new File(path).FileProcessing();
             }
-
-            while (lines.Count == 0) 
-            {
-                path = Console.ReadLine();                
-                _FileProcessing(path);
-                Console.WriteLine("asdad");
-            }
-            Console.WriteLine("Sobaka mops");
-
+            while (lines.Count == 0);
 
             result = new FileService(lines, regex).processing();
 
